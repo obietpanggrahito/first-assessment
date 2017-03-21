@@ -20,14 +20,14 @@
     
     self.webView.delegate = self;
 
-    [self loadView];
+    [self loadWebView];
     // Do any additional setup after loading the view.
     
     
 }
 
 
--(void) loadView {
+-(void) loadWebView {
     
     NSString *google = @"https://www.google.com";
     NSURL * URL = [NSURL URLWithString:google];

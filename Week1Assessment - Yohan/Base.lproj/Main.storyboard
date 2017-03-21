@@ -123,7 +123,7 @@
         <!--Item-->
         <scene sceneID="cGK-1c-R43">
             <objects>
-                <viewController id="Uup-HV-jto" customClass="Web2ViewController" sceneMemberID="viewController">
+                <viewController id="Uup-HV-jto" customClass="webViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LfL-9W-SGl"/>
                         <viewControllerLayoutGuide type="bottom" id="0rj-1h-mdx"/>
@@ -148,7 +148,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="84Q-jR-mVm"/>
                     <connections>
-                        <outlet property="webView" destination="qQE-7d-gPV" id="HTB-Ir-DVu"/>
+                        <outlet property="webView" destination="qQE-7d-gPV" id="gnI-EO-Z4T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykE-wj-NlG" userLabel="First Responder" sceneMemberID="firstResponder"/>

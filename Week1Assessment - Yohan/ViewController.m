@@ -93,22 +93,22 @@
     NSUInteger number1 = [self.textField1.text integerValue];
     NSUInteger number2 = [self.textField2.text integerValue];
 
-    if (self.plusButton.isEnabled) {
+    if (_plusButton.tintColor == [UIColor redColor]) {
         
         self.calculatedValue = number1 + number2;
    
     }
-    else if (self.minusButton.isEnabled) {
+    else if (_minusButton.tintColor == [UIColor redColor]) {
         
         self.calculatedValue = number1 - number2;
     
     }
-    else if (self.timesButton.isEnabled) {
+    else if (_timesButton.tintColor == [UIColor redColor]) {
         
         self.calculatedValue = number1 * number2;
         
     }
-    else if (self.devidedByButton.isEnabled) {
+    else if (_devidedByButton.tintColor == [UIColor redColor]) {
         
         self.calculatedValue = number1 / number2;
         

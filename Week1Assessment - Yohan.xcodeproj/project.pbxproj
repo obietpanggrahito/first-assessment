@@ -14,7 +14,6 @@
 		3DC0DF701E7F7B3900FD5294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0DF6F1E7F7B3900FD5294 /* Assets.xcassets */; };
 		3DC0DF731E7F7B3900FD5294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DC0DF711E7F7B3900FD5294 /* LaunchScreen.storyboard */; };
 		3DC0DF7C1E7F7FFE00FD5294 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0DF7B1E7F7FFE00FD5294 /* webViewController.m */; };
-		3DC0DF7F1E7FBB5B00FD5294 /* Web2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0DF7E1E7FBB5B00FD5294 /* Web2ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +29,6 @@
 		3DC0DF741E7F7B3900FD5294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DC0DF7A1E7F7FFE00FD5294 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		3DC0DF7B1E7F7FFE00FD5294 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
-		3DC0DF7D1E7FBB5B00FD5294 /* Web2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Web2ViewController.h; sourceTree = "<group>"; };
-		3DC0DF7E1E7FBB5B00FD5294 /* Web2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Web2ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +68,6 @@
 				3DC0DF6C1E7F7B3900FD5294 /* Main.storyboard */,
 				3DC0DF7A1E7F7FFE00FD5294 /* webViewController.h */,
 				3DC0DF7B1E7F7FFE00FD5294 /* webViewController.m */,
-				3DC0DF7D1E7FBB5B00FD5294 /* Web2ViewController.h */,
-				3DC0DF7E1E7FBB5B00FD5294 /* Web2ViewController.m */,
 				3DC0DF6F1E7F7B3900FD5294 /* Assets.xcassets */,
 				3DC0DF711E7F7B3900FD5294 /* LaunchScreen.storyboard */,
 				3DC0DF741E7F7B3900FD5294 /* Info.plist */,
@@ -164,7 +159,6 @@
 				3DC0DF681E7F7B3900FD5294 /* AppDelegate.m in Sources */,
 				3DC0DF651E7F7B3900FD5294 /* main.m in Sources */,
 				3DC0DF7C1E7F7FFE00FD5294 /* webViewController.m in Sources */,
-				3DC0DF7F1E7FBB5B00FD5294 /* Web2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
