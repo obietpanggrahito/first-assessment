@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIButton *calculateButton;
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 @property (weak, nonatomic) IBOutlet UITextField *textField2;
 @property (weak, nonatomic) IBOutlet UIButton *plusButton;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *timesButton;
 @property (weak, nonatomic) IBOutlet UIButton *devidedByButton;
 @property (assign, nonatomic) NSInteger *calculatedValue;
+@property (weak, nonatomic) IBOutlet UILabel *answer;
 
 
 
@@ -34,7 +36,7 @@
         [self.minusButton addTarget:self action:NSSelectorFromString(@"minusButtonSign") forControlEvents:UIControlEventTouchUpInside];
         [self.timesButton addTarget:self action:NSSelectorFromString(@"timesButtonSign") forControlEvents:UIControlEventTouchUpInside];
         [self.devidedByButton addTarget:self action:NSSelectorFromString(@"devidedByButtonSign") forControlEvents:UIControlEventTouchUpInside];
-    
+        [self.calculateButton addTarget:self action:NSSelectorFromString(@"calculation") forControlEvents:UIControlEventTouchUpInside];
     
     }
 
@@ -47,59 +49,81 @@
         [self.timesButton setTintColor:[UIColor blueColor]];
         [self.devidedByButton setTintColor:[UIColor blueColor]];
         
-//        self.calculatedValue = self.textField1 + self.textField2;
-        
     }
-
-
-
 }
 
 -(void) minusButtonSign {
     
+    if (self.minusButton.isEnabled) {
+        
+        [self.plusButton setTintColor:[UIColor blueColor]];
+        [self.minusButton setTintColor:[UIColor redColor]];
+        [self.timesButton setTintColor:[UIColor blueColor]];
+        [self.devidedByButton setTintColor:[UIColor blueColor]];
     
+    }
+}
+
+-(void) timesButtonSign {
+    
+    if (self.timesButton.isEnabled) {
+        
+        [self.plusButton setTintColor:[UIColor blueColor]];
+        [self.minusButton setTintColor:[UIColor blueColor]];
+        [self.timesButton setTintColor:[UIColor redColor]];
+        [self.devidedByButton setTintColor:[UIColor blueColor]];
+        
+    }
+}
+
+-(void) devidedByButtonSign {
+    
+        if (self.devidedByButton.isEnabled) {
+        
+        [self.plusButton setTintColor:[UIColor blueColor]];
+        [self.minusButton setTintColor:[UIColor blueColor]];
+        [self.timesButton setTintColor:[UIColor blueColor]];
+        [self.devidedByButton setTintColor:[UIColor redColor]];
+        
+    }
+}
+
+-(void) calculation {
+    
+    NSUInteger number1 = [self.textField1.text integerValue];
+    NSUInteger number2 = [self.textField2.text integerValue];
+
+    if (self.plusButton.isEnabled) {
+        
+        self.calculatedValue = number1 + number2;
+   
+    }
+    else if (self.minusButton.isEnabled) {
+        
+        self.calculatedValue = number1 - number2;
+    
+    }
+    else if (self.timesButton.isEnabled) {
+        
+        self.calculatedValue = number1 * number2;
+        
+    }
+    else if (self.devidedByButton.isEnabled) {
+        
+        self.calculatedValue = number1 / number2;
+        
+    }
+    
+    self.answer.text = [NSString stringWithFormat:@"%i", self.calculatedValue];
+    self.textField1.text = @"";
+    self.textField2.text = @"";
     
 }
 
+
 -(void)submitButton {
-    NSUInteger number1 = 0;
-    NSUInteger number2 = 0;
     
-//    self.number1 = [self.textField1.text integerValue];
-//    self.number2 = [self.textField2.text integerValue];
-//    
-//    
-//    else if (self.minusButton.isEnabled) {
-//        
-//        [self.plusButton setTintColor:[UIColor blueColor]];
-//        [self.minusButton setTintColor:[UIColor redColor]];
-//        [self.timesButton setTintColor:[UIColor blueColor]];
-//        [self.devidedByButton setTintColor:[UIColor blueColor]];
-//        
-//        
-//    }
-//    
-//    else if (self.timesButton.isEnabled) {
-//        
-//        [self.plusButton setTintColor:[UIColor blueColor]];
-//        [self.minusButton setTintColor:[UIColor blueColor]];
-//        [self.timesButton setTintColor:[UIColor redColor]];
-//        [self.devidedByButton setTintColor:[UIColor blueColor]];
-//        
-//        
-//    }
-//    
-//    else if (self.devidedByButton.isEnabled) {
-//        
-//        [self.plusButton setTintColor:[UIColor blueColor]];
-//        [self.minusButton setTintColor:[UIColor blueColor]];
-//        [self.timesButton setTintColor:[UIColor blueColor]];
-//        [self.devidedByButton setTintColor:[UIColor redColor]];
-//    
-//    }
-    
-    
-    if  ((number1 + number2) == 999) {
+    if  ((int)_calculatedValue == 999) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"I'm impressed" message:@"You're a genius" preferredStyle:UIAlertControllerStyleAlert];
         [self presentViewController:alert animated:YES completion:NULL];
@@ -109,22 +133,15 @@
             }];
         [alert addAction:back];
         
-        
-        self.textField1.text = @"";
-        self.textField2.text = @"";
-        
     }
     
-    else if ((number1 + number2) %9 == 0) {
+    else if ((int)_calculatedValue %9 == 0) {
             
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"I'm impressed" message:@"You're a genius" preferredStyle:UIAlertControllerStyleAlert];
         [self presentViewController:alert animated:YES completion:NULL];
         
         UIAlertAction *back = [UIAlertAction actionWithTitle:@"Back" style:UIAlertActionStyleDefault handler:NULL];
         [alert addAction:back];
-        
-        self.textField1.text = @"";
-        self.textField2.text = @"";
         
     }
         
@@ -133,8 +150,5 @@
         return;
        
     }
-
-
-
 }
 @end
